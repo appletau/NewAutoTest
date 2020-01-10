@@ -1,0 +1,722 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1240925B1EB9CC1F001A0949 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1240925A1EB9CC1F001A0949 /* Sparkle.framework */; };
+		1240925D1EB9CC3B001A0949 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1240925A1EB9CC1F001A0949 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6C07D6091BB17E9B00D7F96F /* IPSFCPost_API.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C07D6081BB17E9B00D7F96F /* IPSFCPost_API.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6C09FA20231E092D009AACD3 /* Item.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C09FA1E231E092D009AACD3 /* Item.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6C09FA21231E092D009AACD3 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C09FA1F231E092D009AACD3 /* Item.m */; };
+		6C3CBE2D1A6CD19400C9D767 /* CBAuth_API.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C3CBE261A6CD19400C9D767 /* CBAuth_API.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6C3CBE2E1A6CD19400C9D767 /* CBdelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C3CBE271A6CD19400C9D767 /* CBdelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6C3CBE2F1A6CD19400C9D767 /* ControlBits.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C3CBE281A6CD19400C9D767 /* ControlBits.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6C3CBE301A6CD19400C9D767 /* ControlBits.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3CBE291A6CD19400C9D767 /* ControlBits.m */; };
+		6C3CBE321A6CD19400C9D767 /* libControlBits.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C3CBE2B1A6CD19400C9D767 /* libControlBits.c */; };
+		6C3CBE331A6CD19400C9D767 /* libControlBits.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C3CBE2C1A6CD19400C9D767 /* libControlBits.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6C3CBE3B1A6CD19D00C9D767 /* InstantPudding_Additional.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C3CBE341A6CD19D00C9D767 /* InstantPudding_Additional.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6C3CBE3C1A6CD19D00C9D767 /* InstantPudding_API.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C3CBE351A6CD19D00C9D767 /* InstantPudding_API.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6C3CBE571A6CDE6400C9D767 /* Pudding.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C3CBE551A6CDE6400C9D767 /* Pudding.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6C3CBE581A6CDE6400C9D767 /* Pudding.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3CBE561A6CDE6400C9D767 /* Pudding.m */; };
+		6C99796B19A466CC00487880 /* IOReg.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C99796619A466CC00487880 /* IOReg.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6C99796C19A466CC00487880 /* IOReg.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C99796719A466CC00487880 /* IOReg.m */; };
+		6C9A3D4A1A7781BD002784FF /* libCBAuth.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C9A3D471A7781BD002784FF /* libCBAuth.dylib */; };
+		6C9A3D4B1A7781BD002784FF /* libInstantPudding.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C9A3D481A7781BD002784FF /* libInstantPudding.dylib */; };
+		6C9A3D4C1A7781BD002784FF /* libIPSFCPost.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C9A3D491A7781BD002784FF /* libIPSFCPost.dylib */; };
+		6CA302431B79DC6800F430AD /* HID.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CA302411B79DC6800F430AD /* HID.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6CA302441B79DC6800F430AD /* HID.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA302421B79DC6800F430AD /* HID.m */; };
+		6CA4DC171D4AFA0900AE7AFB /* NI4882.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA4DC151D4AFA0900AE7AFB /* NI4882.framework */; };
+		6CA4DC181D4AFA0900AE7AFB /* VISA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA4DC161D4AFA0900AE7AFB /* VISA.framework */; };
+		6CA4DC1C1D4AFB8500AE7AFB /* GPIB.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CA4DC1A1D4AFB8500AE7AFB /* GPIB.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6CA4DC1D1D4AFB8500AE7AFB /* GPIB.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA4DC1B1D4AFB8500AE7AFB /* GPIB.m */; };
+		6CA4DC251D4B3A3100AE7AFB /* VisaUSB.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CA4DC231D4B3A3100AE7AFB /* VisaUSB.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6CA4DC261D4B3A3100AE7AFB /* VisaUSB.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA4DC241D4B3A3100AE7AFB /* VisaUSB.m */; };
+		6CA81E6F1CC9BD650018AB9B /* libInstantPudding.c in Sources */ = {isa = PBXBuildFile; fileRef = 6CA81E6D1CC9BD650018AB9B /* libInstantPudding.c */; };
+		6CA81E701CC9BD650018AB9B /* libInstantPudding.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CA81E6E1CC9BD650018AB9B /* libInstantPudding.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6CA9B60F1CBE22720067FCFC /* IAC_Socket.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CA9B60D1CBE22720067FCFC /* IAC_Socket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6CA9B6101CBE22720067FCFC /* IAC_Socket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA9B60E1CBE22720067FCFC /* IAC_Socket.m */; };
+		6CB4E0D6230255C800826E60 /* IACHTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CB4E0D4230255C800826E60 /* IACHTTPRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6CB4E0D7230255C800826E60 /* IACHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB4E0D5230255C800826E60 /* IACHTTPRequest.m */; };
+		6CE0C4C019ACA23300D7AC69 /* aardvark.so in Resources */ = {isa = PBXBuildFile; fileRef = 6CE0C4BF19ACA23300D7AC69 /* aardvark.so */; };
+		6CE5CB6E19AB2F550053D0CB /* aardvark.c in Sources */ = {isa = PBXBuildFile; fileRef = 6CE5CB6B19AB2F550053D0CB /* aardvark.c */; };
+		6CE5CB6F19AB2F550053D0CB /* aardvark.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CE5CB6C19AB2F550053D0CB /* aardvark.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6CE6E30919AED70000D67D3A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE6E30819AED70000D67D3A /* CFNetwork.framework */; };
+		6CE6E30B19AED71200D67D3A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE6E30A19AED71200D67D3A /* SystemConfiguration.framework */; };
+		6CE6E30D19AED71D00D67D3A /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE6E30C19AED71D00D67D3A /* libz.1.2.5.dylib */; };
+		EF4CD9E81892404900B28FB1 /* AMSDKCompatibility.h in Headers */ = {isa = PBXBuildFile; fileRef = EF4CD9DE1892404900B28FB1 /* AMSDKCompatibility.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EF4CD9E91892404900B28FB1 /* AMSerialErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = EF4CD9DF1892404900B28FB1 /* AMSerialErrors.h */; };
+		EF4CD9EA1892404900B28FB1 /* AMSerialPort.h in Headers */ = {isa = PBXBuildFile; fileRef = EF4CD9E01892404900B28FB1 /* AMSerialPort.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EF4CD9EB1892404900B28FB1 /* AMSerialPort.m in Sources */ = {isa = PBXBuildFile; fileRef = EF4CD9E11892404900B28FB1 /* AMSerialPort.m */; };
+		EF4CD9EC1892404900B28FB1 /* AMSerialPortAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EF4CD9E21892404900B28FB1 /* AMSerialPortAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EF4CD9ED1892404900B28FB1 /* AMSerialPortAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = EF4CD9E31892404900B28FB1 /* AMSerialPortAdditions.m */; };
+		EF4CD9EE1892404900B28FB1 /* AMSerialPortList.h in Headers */ = {isa = PBXBuildFile; fileRef = EF4CD9E41892404900B28FB1 /* AMSerialPortList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EF4CD9EF1892404900B28FB1 /* AMSerialPortList.m in Sources */ = {isa = PBXBuildFile; fileRef = EF4CD9E51892404900B28FB1 /* AMSerialPortList.m */; };
+		EF4CD9F01892404900B28FB1 /* AMStandardEnumerator.h in Headers */ = {isa = PBXBuildFile; fileRef = EF4CD9E61892404900B28FB1 /* AMStandardEnumerator.h */; };
+		EF4CD9F11892404900B28FB1 /* AMStandardEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = EF4CD9E71892404900B28FB1 /* AMStandardEnumerator.m */; };
+		EF4CD9F2189241D600B28FB1 /* IACFactoryFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = EFF9E8011890BB0600DC296F /* IACFactoryFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EF6DFF6D1A6E3E6500B41167 /* aardvark.so in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6CE0C4BF19ACA23300D7AC69 /* aardvark.so */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		EFD9ED591890CECA0081BFFE /* Equipments.h in Headers */ = {isa = PBXBuildFile; fileRef = EFD9ED571890CECA0081BFFE /* Equipments.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EFD9ED5A1890CECA0081BFFE /* Equipments.m in Sources */ = {isa = PBXBuildFile; fileRef = EFD9ED581890CECA0081BFFE /* Equipments.m */; };
+		EFF9E7F51890BB0500DC296F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFF9E7F41890BB0500DC296F /* Cocoa.framework */; };
+		EFF9E7FF1890BB0500DC296F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EFF9E7FD1890BB0500DC296F /* InfoPlist.strings */; };
+		EFF9E8031890BB0600DC296F /* IACFactoryFramework.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF9E8021890BB0600DC296F /* IACFactoryFramework.m */; };
+		EFF9E8201890BB5A00DC296F /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFF9E81F1890BB5A00DC296F /* IOKit.framework */; };
+		EFF9E8531890BD4900DC296F /* PlistIO.h in Headers */ = {isa = PBXBuildFile; fileRef = EFF9E8511890BD4900DC296F /* PlistIO.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EFF9E8541890BD4900DC296F /* PlistIO.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF9E8521890BD4900DC296F /* PlistIO.m */; };
+		EFF9E85C1890BF7800DC296F /* UART.h in Headers */ = {isa = PBXBuildFile; fileRef = EFF9E85A1890BF7800DC296F /* UART.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EFF9E85D1890BF7800DC296F /* UART.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF9E85B1890BF7800DC296F /* UART.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1240925C1EB9CC2D001A0949 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1240925D1EB9CC3B001A0949 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CE0C4C119ACA23C00D7AC69 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				EF6DFF6D1A6E3E6500B41167 /* aardvark.so in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1240925A1EB9CC1F001A0949 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		6C07D6081BB17E9B00D7F96F /* IPSFCPost_API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IPSFCPost_API.h; path = Pudding/IPSFCPost_API.h; sourceTree = "<group>"; };
+		6C09FA1E231E092D009AACD3 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		6C09FA1F231E092D009AACD3 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		6C3CBE261A6CD19400C9D767 /* CBAuth_API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBAuth_API.h; path = ControlBits/CBAuth_API.h; sourceTree = "<group>"; };
+		6C3CBE271A6CD19400C9D767 /* CBdelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBdelegate.h; path = ControlBits/CBdelegate.h; sourceTree = "<group>"; };
+		6C3CBE281A6CD19400C9D767 /* ControlBits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ControlBits.h; path = ControlBits/ControlBits.h; sourceTree = "<group>"; };
+		6C3CBE291A6CD19400C9D767 /* ControlBits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ControlBits.m; path = ControlBits/ControlBits.m; sourceTree = "<group>"; };
+		6C3CBE2B1A6CD19400C9D767 /* libControlBits.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = libControlBits.c; path = ControlBits/libControlBits.c; sourceTree = "<group>"; };
+		6C3CBE2C1A6CD19400C9D767 /* libControlBits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = libControlBits.h; path = ControlBits/libControlBits.h; sourceTree = "<group>"; };
+		6C3CBE341A6CD19D00C9D767 /* InstantPudding_Additional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InstantPudding_Additional.h; path = Pudding/InstantPudding_Additional.h; sourceTree = "<group>"; };
+		6C3CBE351A6CD19D00C9D767 /* InstantPudding_API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InstantPudding_API.h; path = Pudding/InstantPudding_API.h; sourceTree = "<group>"; };
+		6C3CBE551A6CDE6400C9D767 /* Pudding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pudding.h; path = Pudding/Pudding.h; sourceTree = "<group>"; };
+		6C3CBE561A6CDE6400C9D767 /* Pudding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pudding.m; path = Pudding/Pudding.m; sourceTree = "<group>"; };
+		6C99796619A466CC00487880 /* IOReg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOReg.h; sourceTree = "<group>"; };
+		6C99796719A466CC00487880 /* IOReg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOReg.m; sourceTree = "<group>"; };
+		6C9A3D471A7781BD002784FF /* libCBAuth.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCBAuth.dylib; path = ../../../../usr/local/lib/libCBAuth.dylib; sourceTree = "<group>"; };
+		6C9A3D481A7781BD002784FF /* libInstantPudding.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libInstantPudding.dylib; path = ../../../../usr/local/lib/libInstantPudding.dylib; sourceTree = "<group>"; };
+		6C9A3D491A7781BD002784FF /* libIPSFCPost.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libIPSFCPost.dylib; path = ../../../../usr/local/lib/libIPSFCPost.dylib; sourceTree = "<group>"; };
+		6CA302411B79DC6800F430AD /* HID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HID.h; sourceTree = "<group>"; };
+		6CA302421B79DC6800F430AD /* HID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HID.m; sourceTree = "<group>"; };
+		6CA4DC151D4AFA0900AE7AFB /* NI4882.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NI4882.framework; path = ../../../../Library/Frameworks/NI4882.framework; sourceTree = "<group>"; };
+		6CA4DC161D4AFA0900AE7AFB /* VISA.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VISA.framework; path = ../../../../Library/Frameworks/VISA.framework; sourceTree = "<group>"; };
+		6CA4DC1A1D4AFB8500AE7AFB /* GPIB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPIB.h; sourceTree = "<group>"; };
+		6CA4DC1B1D4AFB8500AE7AFB /* GPIB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPIB.m; sourceTree = "<group>"; };
+		6CA4DC231D4B3A3100AE7AFB /* VisaUSB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisaUSB.h; sourceTree = "<group>"; };
+		6CA4DC241D4B3A3100AE7AFB /* VisaUSB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisaUSB.m; sourceTree = "<group>"; };
+		6CA81E6D1CC9BD650018AB9B /* libInstantPudding.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = libInstantPudding.c; path = Pudding/libInstantPudding.c; sourceTree = "<group>"; };
+		6CA81E6E1CC9BD650018AB9B /* libInstantPudding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = libInstantPudding.h; path = Pudding/libInstantPudding.h; sourceTree = "<group>"; };
+		6CA9B60D1CBE22720067FCFC /* IAC_Socket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAC_Socket.h; sourceTree = "<group>"; };
+		6CA9B60E1CBE22720067FCFC /* IAC_Socket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAC_Socket.m; sourceTree = "<group>"; };
+		6CB4E0D4230255C800826E60 /* IACHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IACHTTPRequest.h; sourceTree = "<group>"; };
+		6CB4E0D5230255C800826E60 /* IACHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IACHTTPRequest.m; sourceTree = "<group>"; };
+		6CE0C4BF19ACA23300D7AC69 /* aardvark.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.bundle"; path = aardvark.so; sourceTree = "<group>"; };
+		6CE5CB6B19AB2F550053D0CB /* aardvark.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aardvark.c; sourceTree = "<group>"; };
+		6CE5CB6C19AB2F550053D0CB /* aardvark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aardvark.h; sourceTree = "<group>"; };
+		6CE6E30819AED70000D67D3A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		6CE6E30A19AED71200D67D3A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		6CE6E30C19AED71D00D67D3A /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		EF4CD9DE1892404900B28FB1 /* AMSDKCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSDKCompatibility.h; sourceTree = "<group>"; };
+		EF4CD9DF1892404900B28FB1 /* AMSerialErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSerialErrors.h; sourceTree = "<group>"; };
+		EF4CD9E01892404900B28FB1 /* AMSerialPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSerialPort.h; sourceTree = "<group>"; };
+		EF4CD9E11892404900B28FB1 /* AMSerialPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSerialPort.m; sourceTree = "<group>"; };
+		EF4CD9E21892404900B28FB1 /* AMSerialPortAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSerialPortAdditions.h; sourceTree = "<group>"; };
+		EF4CD9E31892404900B28FB1 /* AMSerialPortAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSerialPortAdditions.m; sourceTree = "<group>"; };
+		EF4CD9E41892404900B28FB1 /* AMSerialPortList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSerialPortList.h; sourceTree = "<group>"; };
+		EF4CD9E51892404900B28FB1 /* AMSerialPortList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSerialPortList.m; sourceTree = "<group>"; };
+		EF4CD9E61892404900B28FB1 /* AMStandardEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMStandardEnumerator.h; sourceTree = "<group>"; };
+		EF4CD9E71892404900B28FB1 /* AMStandardEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMStandardEnumerator.m; sourceTree = "<group>"; };
+		EFD9ED571890CECA0081BFFE /* Equipments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Equipments.h; sourceTree = "<group>"; };
+		EFD9ED581890CECA0081BFFE /* Equipments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Equipments.m; sourceTree = "<group>"; };
+		EFF9E7F11890BB0500DC296F /* IACFactoryFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IACFactoryFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFF9E7F41890BB0500DC296F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		EFF9E7F71890BB0500DC296F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EFF9E7F81890BB0500DC296F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		EFF9E7F91890BB0500DC296F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		EFF9E7FC1890BB0500DC296F /* IACFactoryFramework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IACFactoryFramework-Info.plist"; sourceTree = "<group>"; };
+		EFF9E7FE1890BB0500DC296F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EFF9E8001890BB0600DC296F /* IACFactoryFramework-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IACFactoryFramework-Prefix.pch"; sourceTree = "<group>"; };
+		EFF9E8011890BB0600DC296F /* IACFactoryFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IACFactoryFramework.h; sourceTree = "<group>"; };
+		EFF9E8021890BB0600DC296F /* IACFactoryFramework.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IACFactoryFramework.m; sourceTree = "<group>"; };
+		EFF9E81F1890BB5A00DC296F /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		EFF9E8511890BD4900DC296F /* PlistIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlistIO.h; sourceTree = "<group>"; };
+		EFF9E8521890BD4900DC296F /* PlistIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlistIO.m; sourceTree = "<group>"; };
+		EFF9E85A1890BF7800DC296F /* UART.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UART.h; sourceTree = "<group>"; };
+		EFF9E85B1890BF7800DC296F /* UART.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UART.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EFF9E7ED1890BB0500DC296F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1240925B1EB9CC1F001A0949 /* Sparkle.framework in Frameworks */,
+				6CA4DC171D4AFA0900AE7AFB /* NI4882.framework in Frameworks */,
+				6CA4DC181D4AFA0900AE7AFB /* VISA.framework in Frameworks */,
+				6CE6E30D19AED71D00D67D3A /* libz.1.2.5.dylib in Frameworks */,
+				6C9A3D4A1A7781BD002784FF /* libCBAuth.dylib in Frameworks */,
+				6C9A3D4B1A7781BD002784FF /* libInstantPudding.dylib in Frameworks */,
+				6C9A3D4C1A7781BD002784FF /* libIPSFCPost.dylib in Frameworks */,
+				6CE6E30B19AED71200D67D3A /* SystemConfiguration.framework in Frameworks */,
+				6CE6E30919AED70000D67D3A /* CFNetwork.framework in Frameworks */,
+				EFF9E8201890BB5A00DC296F /* IOKit.framework in Frameworks */,
+				EFF9E7F51890BB0500DC296F /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6C3CBE241A6CD17800C9D767 /* Pudding */ = {
+			isa = PBXGroup;
+			children = (
+				6CA81E6D1CC9BD650018AB9B /* libInstantPudding.c */,
+				6CA81E6E1CC9BD650018AB9B /* libInstantPudding.h */,
+				6C07D6081BB17E9B00D7F96F /* IPSFCPost_API.h */,
+				6C3CBE341A6CD19D00C9D767 /* InstantPudding_Additional.h */,
+				6C3CBE351A6CD19D00C9D767 /* InstantPudding_API.h */,
+				6C3CBE551A6CDE6400C9D767 /* Pudding.h */,
+				6C3CBE561A6CDE6400C9D767 /* Pudding.m */,
+			);
+			name = Pudding;
+			sourceTree = "<group>";
+		};
+		6C3CBE251A6CD18000C9D767 /* ControlBits */ = {
+			isa = PBXGroup;
+			children = (
+				6C3CBE261A6CD19400C9D767 /* CBAuth_API.h */,
+				6C3CBE271A6CD19400C9D767 /* CBdelegate.h */,
+				6C3CBE281A6CD19400C9D767 /* ControlBits.h */,
+				6C3CBE291A6CD19400C9D767 /* ControlBits.m */,
+				6C3CBE2B1A6CD19400C9D767 /* libControlBits.c */,
+				6C3CBE2C1A6CD19400C9D767 /* libControlBits.h */,
+			);
+			name = ControlBits;
+			sourceTree = "<group>";
+		};
+		6C99796519A466CC00487880 /* IOReg */ = {
+			isa = PBXGroup;
+			children = (
+				6C99796619A466CC00487880 /* IOReg.h */,
+				6C99796719A466CC00487880 /* IOReg.m */,
+			);
+			path = IOReg;
+			sourceTree = "<group>";
+		};
+		6C99796F19A4946000487880 /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				6CA9B60D1CBE22720067FCFC /* IAC_Socket.h */,
+				6CA9B60E1CBE22720067FCFC /* IAC_Socket.m */,
+			);
+			path = Socket;
+			sourceTree = "<group>";
+		};
+		6CA302401B79DC6800F430AD /* HID */ = {
+			isa = PBXGroup;
+			children = (
+				6CA302411B79DC6800F430AD /* HID.h */,
+				6CA302421B79DC6800F430AD /* HID.m */,
+			);
+			path = HID;
+			sourceTree = "<group>";
+		};
+		6CA4DC191D4AFB8500AE7AFB /* Gpib */ = {
+			isa = PBXGroup;
+			children = (
+				6CA4DC1A1D4AFB8500AE7AFB /* GPIB.h */,
+				6CA4DC1B1D4AFB8500AE7AFB /* GPIB.m */,
+			);
+			path = Gpib;
+			sourceTree = "<group>";
+		};
+		6CA4DC1E1D4AFB9800AE7AFB /* VisaUSB */ = {
+			isa = PBXGroup;
+			children = (
+				6CA4DC231D4B3A3100AE7AFB /* VisaUSB.h */,
+				6CA4DC241D4B3A3100AE7AFB /* VisaUSB.m */,
+			);
+			path = VisaUSB;
+			sourceTree = "<group>";
+		};
+		6CB4E0D3230255C800826E60 /* IACBobcat */ = {
+			isa = PBXGroup;
+			children = (
+				6CB4E0D4230255C800826E60 /* IACHTTPRequest.h */,
+				6CB4E0D5230255C800826E60 /* IACHTTPRequest.m */,
+			);
+			name = IACBobcat;
+			path = IACFactoryFramework/basicClasses/IACBobcat;
+			sourceTree = SOURCE_ROOT;
+		};
+		6CE5CB6A19AB2F550053D0CB /* Aardvark */ = {
+			isa = PBXGroup;
+			children = (
+				6CE0C4BF19ACA23300D7AC69 /* aardvark.so */,
+				6CE5CB6B19AB2F550053D0CB /* aardvark.c */,
+				6CE5CB6C19AB2F550053D0CB /* aardvark.h */,
+			);
+			path = Aardvark;
+			sourceTree = "<group>";
+		};
+		EF4CD9DD1892402600B28FB1 /* AMSerial */ = {
+			isa = PBXGroup;
+			children = (
+				EF4CD9DE1892404900B28FB1 /* AMSDKCompatibility.h */,
+				EF4CD9DF1892404900B28FB1 /* AMSerialErrors.h */,
+				EF4CD9E01892404900B28FB1 /* AMSerialPort.h */,
+				EF4CD9E11892404900B28FB1 /* AMSerialPort.m */,
+				EF4CD9E21892404900B28FB1 /* AMSerialPortAdditions.h */,
+				EF4CD9E31892404900B28FB1 /* AMSerialPortAdditions.m */,
+				EF4CD9E41892404900B28FB1 /* AMSerialPortList.h */,
+				EF4CD9E51892404900B28FB1 /* AMSerialPortList.m */,
+				EF4CD9E61892404900B28FB1 /* AMStandardEnumerator.h */,
+				EF4CD9E71892404900B28FB1 /* AMStandardEnumerator.m */,
+			);
+			path = AMSerial;
+			sourceTree = "<group>";
+		};
+		EFD9ED561890CEB50081BFFE /* metaClasses */ = {
+			isa = PBXGroup;
+			children = (
+				EFD9ED571890CECA0081BFFE /* Equipments.h */,
+				EFD9ED581890CECA0081BFFE /* Equipments.m */,
+			);
+			path = metaClasses;
+			sourceTree = "<group>";
+		};
+		EFF9E7E71890BB0500DC296F = {
+			isa = PBXGroup;
+			children = (
+				EFF9E7FA1890BB0500DC296F /* IACFactoryFramework */,
+				EFF9E7F31890BB0500DC296F /* Frameworks */,
+				EFF9E7F21890BB0500DC296F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EFF9E7F21890BB0500DC296F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EFF9E7F11890BB0500DC296F /* IACFactoryFramework.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EFF9E7F31890BB0500DC296F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1240925A1EB9CC1F001A0949 /* Sparkle.framework */,
+				6CA4DC151D4AFA0900AE7AFB /* NI4882.framework */,
+				6CA4DC161D4AFA0900AE7AFB /* VISA.framework */,
+				6C9A3D471A7781BD002784FF /* libCBAuth.dylib */,
+				6C9A3D481A7781BD002784FF /* libInstantPudding.dylib */,
+				6C9A3D491A7781BD002784FF /* libIPSFCPost.dylib */,
+				6CE6E30C19AED71D00D67D3A /* libz.1.2.5.dylib */,
+				6CE6E30A19AED71200D67D3A /* SystemConfiguration.framework */,
+				6CE6E30819AED70000D67D3A /* CFNetwork.framework */,
+				EFF9E81F1890BB5A00DC296F /* IOKit.framework */,
+				EFF9E7F41890BB0500DC296F /* Cocoa.framework */,
+				EFF9E7F61890BB0500DC296F /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EFF9E7F61890BB0500DC296F /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EFF9E7F71890BB0500DC296F /* Foundation.framework */,
+				EFF9E7F81890BB0500DC296F /* CoreData.framework */,
+				EFF9E7F91890BB0500DC296F /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		EFF9E7FA1890BB0500DC296F /* IACFactoryFramework */ = {
+			isa = PBXGroup;
+			children = (
+				EF4CD9DD1892402600B28FB1 /* AMSerial */,
+				EFD9ED561890CEB50081BFFE /* metaClasses */,
+				EFF9E8381890BC6500DC296F /* basicClasses */,
+				EFF9E8011890BB0600DC296F /* IACFactoryFramework.h */,
+				EFF9E8021890BB0600DC296F /* IACFactoryFramework.m */,
+				EFF9E7FB1890BB0500DC296F /* Supporting Files */,
+			);
+			path = IACFactoryFramework;
+			sourceTree = "<group>";
+		};
+		EFF9E7FB1890BB0500DC296F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EFF9E7FC1890BB0500DC296F /* IACFactoryFramework-Info.plist */,
+				EFF9E7FD1890BB0500DC296F /* InfoPlist.strings */,
+				EFF9E8001890BB0600DC296F /* IACFactoryFramework-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EFF9E8381890BC6500DC296F /* basicClasses */ = {
+			isa = PBXGroup;
+			children = (
+				6CB4E0D3230255C800826E60 /* IACBobcat */,
+				6CA4DC1E1D4AFB9800AE7AFB /* VisaUSB */,
+				6CA4DC191D4AFB8500AE7AFB /* Gpib */,
+				6CA302401B79DC6800F430AD /* HID */,
+				6C3CBE251A6CD18000C9D767 /* ControlBits */,
+				6C3CBE241A6CD17800C9D767 /* Pudding */,
+				6CE5CB6A19AB2F550053D0CB /* Aardvark */,
+				6C99796F19A4946000487880 /* Socket */,
+				6C99796519A466CC00487880 /* IOReg */,
+				EFF9E8551890BD5100DC296F /* Uart */,
+				EFF9E8501890BCFA00DC296F /* Plist */,
+			);
+			path = basicClasses;
+			sourceTree = "<group>";
+		};
+		EFF9E8501890BCFA00DC296F /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				6C09FA1E231E092D009AACD3 /* Item.h */,
+				6C09FA1F231E092D009AACD3 /* Item.m */,
+				EFF9E8511890BD4900DC296F /* PlistIO.h */,
+				EFF9E8521890BD4900DC296F /* PlistIO.m */,
+			);
+			path = Plist;
+			sourceTree = "<group>";
+		};
+		EFF9E8551890BD5100DC296F /* Uart */ = {
+			isa = PBXGroup;
+			children = (
+				EFF9E85A1890BF7800DC296F /* UART.h */,
+				EFF9E85B1890BF7800DC296F /* UART.m */,
+			);
+			path = Uart;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		EFF9E7EE1890BB0500DC296F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF4CD9EE1892404900B28FB1 /* AMSerialPortList.h in Headers */,
+				EF4CD9E81892404900B28FB1 /* AMSDKCompatibility.h in Headers */,
+				EF4CD9E91892404900B28FB1 /* AMSerialErrors.h in Headers */,
+				EF4CD9EC1892404900B28FB1 /* AMSerialPortAdditions.h in Headers */,
+				EFF9E8531890BD4900DC296F /* PlistIO.h in Headers */,
+				EF4CD9F2189241D600B28FB1 /* IACFactoryFramework.h in Headers */,
+				EF4CD9EA1892404900B28FB1 /* AMSerialPort.h in Headers */,
+				6C3CBE2E1A6CD19400C9D767 /* CBdelegate.h in Headers */,
+				6C3CBE331A6CD19400C9D767 /* libControlBits.h in Headers */,
+				6C3CBE2F1A6CD19400C9D767 /* ControlBits.h in Headers */,
+				6C3CBE571A6CDE6400C9D767 /* Pudding.h in Headers */,
+				EFD9ED591890CECA0081BFFE /* Equipments.h in Headers */,
+				6C3CBE3B1A6CD19D00C9D767 /* InstantPudding_Additional.h in Headers */,
+				6C3CBE2D1A6CD19400C9D767 /* CBAuth_API.h in Headers */,
+				6CA302431B79DC6800F430AD /* HID.h in Headers */,
+				6C3CBE3C1A6CD19D00C9D767 /* InstantPudding_API.h in Headers */,
+				6C99796B19A466CC00487880 /* IOReg.h in Headers */,
+				6CA4DC1C1D4AFB8500AE7AFB /* GPIB.h in Headers */,
+				6CA4DC251D4B3A3100AE7AFB /* VisaUSB.h in Headers */,
+				6C07D6091BB17E9B00D7F96F /* IPSFCPost_API.h in Headers */,
+				6CA81E701CC9BD650018AB9B /* libInstantPudding.h in Headers */,
+				6CA9B60F1CBE22720067FCFC /* IAC_Socket.h in Headers */,
+				6CB4E0D6230255C800826E60 /* IACHTTPRequest.h in Headers */,
+				6C09FA20231E092D009AACD3 /* Item.h in Headers */,
+				6CE5CB6F19AB2F550053D0CB /* aardvark.h in Headers */,
+				EFF9E85C1890BF7800DC296F /* UART.h in Headers */,
+				EF4CD9F01892404900B28FB1 /* AMStandardEnumerator.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		EFF9E7F01890BB0500DC296F /* IACFactoryFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFF9E8191890BB0600DC296F /* Build configuration list for PBXNativeTarget "IACFactoryFramework" */;
+			buildPhases = (
+				EFF9E7EC1890BB0500DC296F /* Sources */,
+				EFF9E7ED1890BB0500DC296F /* Frameworks */,
+				EFF9E7EE1890BB0500DC296F /* Headers */,
+				EFF9E7EF1890BB0500DC296F /* Resources */,
+				6CE0C4C119ACA23C00D7AC69 /* CopyFiles */,
+				1240925C1EB9CC2D001A0949 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IACFactoryFramework;
+			productName = IACFactoryFramework;
+			productReference = EFF9E7F11890BB0500DC296F /* IACFactoryFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EFF9E7E81890BB0500DC296F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Richard Li";
+			};
+			buildConfigurationList = EFF9E7EB1890BB0500DC296F /* Build configuration list for PBXProject "IACFactoryFramework" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EFF9E7E71890BB0500DC296F;
+			productRefGroup = EFF9E7F21890BB0500DC296F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EFF9E7F01890BB0500DC296F /* IACFactoryFramework */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EFF9E7EF1890BB0500DC296F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFF9E7FF1890BB0500DC296F /* InfoPlist.strings in Resources */,
+				6CE0C4C019ACA23300D7AC69 /* aardvark.so in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EFF9E7EC1890BB0500DC296F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C09FA21231E092D009AACD3 /* Item.m in Sources */,
+				EFD9ED5A1890CECA0081BFFE /* Equipments.m in Sources */,
+				EFF9E8541890BD4900DC296F /* PlistIO.m in Sources */,
+				6CA81E6F1CC9BD650018AB9B /* libInstantPudding.c in Sources */,
+				6C3CBE321A6CD19400C9D767 /* libControlBits.c in Sources */,
+				6CB4E0D7230255C800826E60 /* IACHTTPRequest.m in Sources */,
+				6CE5CB6E19AB2F550053D0CB /* aardvark.c in Sources */,
+				6CA302441B79DC6800F430AD /* HID.m in Sources */,
+				EFF9E8031890BB0600DC296F /* IACFactoryFramework.m in Sources */,
+				6CA9B6101CBE22720067FCFC /* IAC_Socket.m in Sources */,
+				EF4CD9EF1892404900B28FB1 /* AMSerialPortList.m in Sources */,
+				6C3CBE581A6CDE6400C9D767 /* Pudding.m in Sources */,
+				EF4CD9F11892404900B28FB1 /* AMStandardEnumerator.m in Sources */,
+				EF4CD9EB1892404900B28FB1 /* AMSerialPort.m in Sources */,
+				6C3CBE301A6CD19400C9D767 /* ControlBits.m in Sources */,
+				6CA4DC1D1D4AFB8500AE7AFB /* GPIB.m in Sources */,
+				EFF9E85D1890BF7800DC296F /* UART.m in Sources */,
+				6CA4DC261D4B3A3100AE7AFB /* VisaUSB.m in Sources */,
+				EF4CD9ED1892404900B28FB1 /* AMSerialPortAdditions.m in Sources */,
+				6C99796C19A466CC00487880 /* IOReg.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EFF9E7FD1890BB0500DC296F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EFF9E7FE1890BB0500DC296F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EFF9E8171890BB0600DC296F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		EFF9E8181890BB0600DC296F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		EFF9E81A1890BB0600DC296F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/**",
+					"$(PROJECT_DIR)/IACFactoryFramework",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+					"$(PROJECT_DIR)",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IACFactoryFramework/IACFactoryFramework-Prefix.pch";
+				INFOPLIST_FILE = "IACFactoryFramework/IACFactoryFramework-Info.plist";
+				INSTALL_PATH = "@rpath";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/**",
+					/usr/local/lib,
+				);
+				MACH_O_TYPE = mh_dylib;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.richardli.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		EFF9E81B1890BB0600DC296F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/**",
+					"$(PROJECT_DIR)/IACFactoryFramework",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+					"$(PROJECT_DIR)",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IACFactoryFramework/IACFactoryFramework-Prefix.pch";
+				INFOPLIST_FILE = "IACFactoryFramework/IACFactoryFramework-Info.plist";
+				INSTALL_PATH = "@rpath";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/**",
+					/usr/local/lib,
+				);
+				MACH_O_TYPE = mh_dylib;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.richardli.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EFF9E7EB1890BB0500DC296F /* Build configuration list for PBXProject "IACFactoryFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFF9E8171890BB0600DC296F /* Debug */,
+				EFF9E8181890BB0600DC296F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EFF9E8191890BB0600DC296F /* Build configuration list for PBXNativeTarget "IACFactoryFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFF9E81A1890BB0600DC296F /* Debug */,
+				EFF9E81B1890BB0600DC296F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EFF9E7E81890BB0500DC296F /* Project object */;
+}
