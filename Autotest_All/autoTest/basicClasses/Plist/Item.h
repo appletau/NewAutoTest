@@ -9,12 +9,24 @@
 #import <Foundation/Foundation.h>
 
 @interface Item : NSObject
+{
+    float MinFloatValue;
+    float MaxFloatValue;
+}
 @property(assign) int Order;
 @property(readonly) NSString *Name;
 @property(atomic,readonly) NSString *Validator;
 @property(atomic,readonly) NSString *Command;
-@property(atomic,readonly) NSString *Min;
-@property(atomic,readonly) NSString *Max;
+
+@property(retain) NSString *MinStr;
+@property(retain) NSString *MaxStr;
+@property(readonly,assign)float MinFloatValue;
+@property(readonly,assign)float MaxFloatValue;
+-(void) setMin:(NSNumber *) num;
+-(void) setMax:(NSNumber *) num;
+-(NSString *) Min;
+-(NSString *) Max;
+
 @property(atomic,readonly) NSString *Unit;
 @property(atomic,readonly) BOOL isSkip;
 
@@ -26,8 +38,10 @@
 @property(atomic,readwrite, retain) NSString *TestMessage_1, *TestMessage_2, *TestMessage_3, *TestMessage_4;
 @property(atomic,assign) BOOL isPass_1, isPass_2, isPass_3, isPass_4;
 
+
+
 -(id)init:(NSDictionary *)dic;
--(void)setColorResult:(NSString *)str dutNum:(int)dutNum;
+-(void)setResult:(NSString *)resultStr displayStr:(NSString *)displayStr valueStr:(NSString *)valueStr item:(Item*)item dutNum:(int)dutNum;
 -(void)print:(int)dutNum;
 @end
 

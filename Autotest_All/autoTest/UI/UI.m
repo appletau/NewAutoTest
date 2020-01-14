@@ -13,7 +13,7 @@
 #define IS_1UP ((sn2==nil) && (sn3==nil )&& (sn4==nil))
 #define Test_Simultaneously_ByFixture //for only one start button case (1 up or One Big Start button)
 #define RESERVE @""
-#define SN_LEN 1
+#define SN_LEN 17
 
 @implementation UI
 
@@ -25,7 +25,7 @@
     ctrlbitsArray=[[NSArray alloc] initWithObjects:RESERVE,ctrlbits1=[ControlBits new],ctrlbits2=[ControlBits new],ctrlbits3=[ControlBits new],ctrlbits4=[ControlBits new],nil];
     validatorPWArray=[[NSArray alloc] initWithObjects:RESERVE,validatorPW1=[ValidatorPW new],validatorPW2=[ValidatorPW new],validatorPW3=[ValidatorPW new],validatorPW4=[ValidatorPW new],nil];
     
-    ctrlMode=ScanSn;
+    ctrlMode=AutoReadSn;
     [self setPlist:[PlistIO sharedPlistIO]];
     [self setUiOutlet:[UI_Outlet sharedInstance]];
     [self initMainUI];
@@ -214,7 +214,8 @@
             else
                 [fun performSelector:NSSelectorFromString([NSString stringWithFormat:@"%@:",item.Name]) withObject:args];
             
-            __block NSString *value=[NSString stringWithString:fun.testDisplayMessage];
+            __block NSString *displayStr=[NSString stringWithString:fun.testDisplayMessage];
+            __block NSString *testValue=[NSString stringWithString:fun.testValue];
             __block NSString *result=fun.isPass?@"PASS":@"FAIL";
             [failedList appendString:fun.isPass?@"":[NSString stringWithFormat:@"%@--%d\r",item.Name,dutNum]];
             
@@ -227,16 +228,14 @@
                     case 4: [_uiOutlet setFailList4:failedList];break;
                     default: break;
                 }
-                [item setValue:value forKey:[NSString stringWithFormat:@"Value_%d",dutNum]];
-                [item setColorResult:result dutNum:dutNum];
+                [item setResult:result displayStr:displayStr valueStr:testValue item:item dutNum:dutNum];
                 [item setValue:[NSString stringWithFormat:@"%.4f",[[NSDate date] timeIntervalSinceDate:beginTime]] forKey:[NSString stringWithFormat:@"Time_%d",dutNum]];
             });
         }
         else
         {
             dispatch_sync(dispatch_get_main_queue(),^{
-                [item setValue:@"Untested" forKey:[NSString stringWithFormat:@"Value_%d",dutNum]];
-                [item setColorResult:@"SKIP" dutNum:dutNum];
+                [item setResult:@"SKIP" displayStr:@"Untested" valueStr:nil item:item dutNum:dutNum];
                 [item setValue:@"0" forKey:[NSString stringWithFormat:@"Time_%d",dutNum]];
             });
         }
@@ -332,11 +331,7 @@
 {
     for (Item *item in _plist.TestItemList)
     {
-        [item setValue:@"" forKey:[NSString stringWithFormat:@"TestValue_%d",dutNum]];
-        [item setValue:@"" forKey:[NSString stringWithFormat:@"TestMessage_%d",dutNum]];
-        [item setValue:@"" forKey:[NSString stringWithFormat:@"Value_%d",dutNum]];
-        [item setValue:@"0" forKey:[NSString stringWithFormat:@"Time_%d",dutNum]];
-        [item setColorResult:@"" dutNum:dutNum];
+        [item setResult:@"" displayStr:nil valueStr:nil item:item dutNum:dutNum];
     }
     
     switch (dutNum)
