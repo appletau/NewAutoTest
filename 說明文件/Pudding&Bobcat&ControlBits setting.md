@@ -200,6 +200,15 @@ ecid=0x00054C80382BC226
  * 開啟Windows Remote Desktop執行IE輸入http://10.159.252.11/FIS/MAY/MvcBobcat_A7/Home/B238?c=QUERY_RECORD&sn=CC4W60VCJLPQ&p=sbuild
 瀏覽器上回應:0 SFC_OK sbuild=B238-PRQ2_4C
 
+###1UP ＆ 4UP 設定方式
+1. 專案中有三個 .xib檔，如下所示，將要選用的 .xib名稱改為MainMenu
+ * MainMenu_1up
+ * MainMenu_4up (4個TableView呈現4UP TestList)
+ * MainMenu_4in1 (1個TableVew呈現4UP TestList)
+2. 修改ini.plst檔裡面的EQUIPMENTS的欄位，1UP只會有一個Device item去控制DUT，而4UP將會有4個Device item去控制4個DUT，<font color="red">4UP Device item的命名方式必須要帶Thread index(1~4)</font>，ex: "THRD1 _ DevUART"。
+
+### 
+
 ###Autotest基礎程式coding注意事項:	
 1. 一開始在寫sample code或test host時必須使用有IACFactoryFramework.framework的版本，以保持底層的一致，確保程式的可移植性
 2. source code 的名稱請改成有意義的命名，因為原本的名字的資料夾每個人都有了，以避免搞混

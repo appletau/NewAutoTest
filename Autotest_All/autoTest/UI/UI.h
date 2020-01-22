@@ -16,13 +16,6 @@
 #import "ThreadSync.h"
 #import "CSV.h"
 
-typedef enum _ControlMode
-{
-    ScanSn,//manual scan sn for 1 & 4 up
-    AutoReadSn,//auto read sn from DUT for 1 & 4 up
-    TempSn//for manual scan sn & 4 independent start button
-}ControlMode;
-
 @interface UI : NSObject <NSTextFieldDelegate>
 {
     NSMutableDictionary *settingDic;
@@ -39,7 +32,6 @@ typedef enum _ControlMode
     IBOutlet NSTextField *sn1,*sn2,*sn3,*sn4,*temp_sn;
     IBOutlet NSButton *startBtn1,*startBtn2,*startBtn3,*startBtn4;
     IBOutlet NSTableView *table1,*table2,*table3,*table4;
-    ControlMode ctrlMode;
 }
 @property (assign) PlistIO *plist;
 @property (assign) UI_Outlet *uiOutlet;
