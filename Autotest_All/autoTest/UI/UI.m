@@ -12,7 +12,6 @@
 #import "Utility.h"
 #define IS_1UP ((sn2==nil) && (sn3==nil )&& (sn4==nil))
 #define Test_Simultaneously_ByFixture //for only one start button case (1 up or One Big Start button)
-#define IS_Temp_SN_Hidden NO
 #define RESERVE @""
 #define SN_LEN 17
 
@@ -25,7 +24,7 @@
     puddingArray=[[NSArray alloc] initWithObjects:RESERVE,pudding1=[Pudding new],pudding2=[Pudding new],pudding3=[Pudding new],pudding4=[Pudding new],nil];
     ctrlbitsArray=[[NSArray alloc] initWithObjects:RESERVE,ctrlbits1=[ControlBits new],ctrlbits2=[ControlBits new],ctrlbits3=[ControlBits new],ctrlbits4=[ControlBits new],nil];
     validatorPWArray=[[NSArray alloc] initWithObjects:RESERVE,validatorPW1=[ValidatorPW new],validatorPW2=[ValidatorPW new],validatorPW3=[ValidatorPW new],validatorPW4=[ValidatorPW new],nil];
-    
+    ctrlMode = TempSn;
     [self setPlist:[PlistIO sharedPlistIO]];
     [self setUiOutlet:[UI_Outlet sharedInstance]];
     [self initMainUI];
@@ -51,18 +50,18 @@
 #pragma mark  Button & Menu Item Clicked Action
 
 - (IBAction)clickOnTempBtn:(id)sender {
-    int dutNum=[[sender identifier] intValue];
-    [_uiOutlet setValue:_uiOutlet.temp_sn_str forKey:[NSString stringWithFormat:@"sn%d_str",dutNum]];
+    NSInteger dutNum=[sender tag];
+    [_uiOutlet setValue:_uiOutlet.temp_sn_str forKey:[NSString stringWithFormat:@"sn%ld_str",(long)dutNum]];
     [_uiOutlet setTemp_sn_str:@""];
 }
 
 - (IBAction)clickOnBigStartBtn:(id)sender
 {
-    #ifdef Test_Simultaneously_ByFixture
+#ifdef Test_Simultaneously_ByFixture
     if (![self fixtureAction:@"PUSH_IN"])
         return;
     
-    if(![self confirmSNx4])
+    if(ctrlMode!=AutoReadSn && ![self confirmSNx4])
         return;
     
     [_uiOutlet setBigStartBtn_enable:NO];
@@ -72,27 +71,14 @@
     [startBtn2 performClick:startBtn2];
     [startBtn3 performClick:startBtn3];
     [startBtn4 performClick:startBtn4];
-    
-    if ([threadSync CheckSyncPointOnUI])
-    {
-        if (![self fixtureAction:@"PULL_OUT"])
-        {
-            [Utility showMessageBox:Error text:@"Please contact the PE to check te Fixture"];
-        }
-
-        [_uiOutlet setBigStartBtn_enable:YES];
-        [sn1 becomeFirstResponder];
-        [window setBackgroundColor:[NSColor controlColor]];
-        [Utility showMessageBox:Information text:@"Test is Finished & Done"];
-    }
-    #endif
+#endif
 }
 
 - (IBAction)clickOnStartBtn:(id)sender
 {
     int dutNum=[[sender identifier] intValue];
     [self resetUI:dutNum];
-    NSString __block *sn;
+    //NSString __block *sn;
     dispatch_group_t taskGroup=dispatch_group_create();
     [threadSync SetSyncPointOnTC:NotYet_PassThru forThread:dutNum];
     
@@ -108,19 +94,8 @@
     [self tempSN_SettingByDutNum:dutNum];
     
     dispatch_group_async(taskGroup,dispatch_get_global_queue(0, 0),^{
-        
-        sn=[self autoRead_SN:dutNum];
-        
-        dispatch_sync(dispatch_get_main_queue(),^{
-            switch (dutNum)
-            {
-                case 1: [_uiOutlet setSn1_str:sn]; break;
-                case 2: [_uiOutlet setSn2_str:sn]; break;
-                case 3: [_uiOutlet setSn3_str:sn]; break;
-                case 4: [_uiOutlet setSn4_str:sn]; break;
-                default: break;
-            }
-        });
+        if (ctrlMode==AutoReadSn)
+            [self autoRead_SN:dutNum];
     });
     
     dispatch_group_notify(taskGroup,dispatch_get_main_queue(),^{
@@ -163,7 +138,7 @@
 
 - (IBAction)clickOnApplyBtn:(id)sender
 {
-     /*if (![self checkUartPathSeting])
+    /*if (![self checkUartPathSeting])
      {
      [Utility showMessageBox:Error info:@"The UART path setting is overlape or empty"];
      return;
@@ -272,10 +247,10 @@
         
         switch (dutNum)
         {
-            case 1: [_uiOutlet setStartBtn1_enable:YES]; [_uiOutlet setSn1_enable:!IS_Temp_SN_Hidden]; [_uiOutlet setSn1_str:@""]; break;
-            case 2: [_uiOutlet setStartBtn2_enable:YES]; [_uiOutlet setSn2_enable:!IS_Temp_SN_Hidden]; [_uiOutlet setSn2_str:@""]; break;
-            case 3: [_uiOutlet setStartBtn3_enable:YES]; [_uiOutlet setSn3_enable:!IS_Temp_SN_Hidden]; [_uiOutlet setSn3_str:@""]; break;
-            case 4: [_uiOutlet setStartBtn4_enable:YES]; [_uiOutlet setSn4_enable:!IS_Temp_SN_Hidden]; [_uiOutlet setSn4_str:@""]; break;
+            case 1: [_uiOutlet setStartBtn1_enable:YES]; [_uiOutlet setSn1_enable:ctrlMode==ScanSn?YES:NO]; [_uiOutlet setSn1_str:@""]; break;
+            case 2: [_uiOutlet setStartBtn2_enable:YES]; [_uiOutlet setSn2_enable:ctrlMode==ScanSn?YES:NO]; [_uiOutlet setSn2_str:@""]; break;
+            case 3: [_uiOutlet setStartBtn3_enable:YES]; [_uiOutlet setSn3_enable:ctrlMode==ScanSn?YES:NO]; [_uiOutlet setSn3_str:@""]; break;
+            case 4: [_uiOutlet setStartBtn4_enable:YES]; [_uiOutlet setSn4_enable:ctrlMode==ScanSn?YES:NO]; [_uiOutlet setSn4_str:@""]; break;
             default: break;
         }
         [threadSync SetSyncPointOnTC:Passthru forThread:dutNum];
@@ -290,26 +265,50 @@
 
 - (void)waitWholeTestEnd
 {
-    #ifndef Test_Simultaneously_ByFixture
+#ifdef Test_Simultaneously_ByFixture
+    if ([threadSync CheckSyncPointOnUI])
+    {
+        if (![self fixtureAction:@"PULL_OUT"])
+        {
+            [Utility showMessageBox:Error text:@"Please contact the PE to check te Fixture"];
+        }
+        
+        [_uiOutlet setBigStartBtn_enable:YES];
+        [sn1 becomeFirstResponder];
+        [window setBackgroundColor:[NSColor controlColor]];
+        //[Utility showMessageBox:Information text:@"Test is Finished & Done"];
+    }
+#else
     [sn1 becomeFirstResponder];
     [window setBackgroundColor:[NSColor controlColor]];
-    [Utility showMessageBox:Information text:@"Independent One Test is Finished & Done"];
-    #endif
+    //[Utility showMessageBox:Information text:@"Independent One Test is Finished & Done"];
+#endif
     
 }
 
 - (void)tempSN_SettingByDutNum:(int)dutNum
 {
-    [_uiOutlet setValue:_uiOutlet.temp_sn_str forKey:[NSString stringWithFormat:@"sn%d_str",dutNum]];
-    [_uiOutlet setTemp_sn_str:@""];
+    if([[_uiOutlet valueForKey:[NSString stringWithFormat:@"sn%d_str",dutNum]] length] != SN_LEN) {
+        [_uiOutlet setValue:_uiOutlet.temp_sn_str forKey:[NSString stringWithFormat:@"sn%d_str",dutNum]];
+        [_uiOutlet setTemp_sn_str:@""];
+    }
 }
 
--(NSString*)autoRead_SN:(int)dutNum
+-(void)autoRead_SN:(int)dutNum
 {
     //TODO:read sn By diagnose command
     sleep(2);//simulate working time jsut for test
-    return [NSString stringWithFormat:@"%dXXXXXXXXZZZZZZZZ",dutNum];
-    return @"Auto Read SN Error !";
+    NSString *sn=[NSString stringWithFormat:@"%dXXXXXXXXZZZZZZZZ",dutNum];//@"Auto Read SN Error !";
+    dispatch_sync(dispatch_get_main_queue(),^{
+        switch (dutNum)
+        {
+            case 1: [_uiOutlet setSn1_str:sn]; break;
+            case 2: [_uiOutlet setSn2_str:sn]; break;
+            case 3: [_uiOutlet setSn3_str:sn]; break;
+            case 4: [_uiOutlet setSn4_str:sn]; break;
+            default: break;
+        }
+    });
 }
 
 - (BOOL)fixtureAction:(NSString*)action
@@ -385,20 +384,20 @@
 - (void)initMainUI
 {
     [window setTitle:[NSString stringWithFormat:@"%@:%@ <Pudding:%s>",_plist.StationName,_plist.SW_Ver,[Pudding getVersion]]];
-    #ifdef Test_Simultaneously_ByFixture
-        [_uiOutlet setHideBigStartBtn:NO];
-    #else
-        [_uiOutlet setHideBigStartBtn:YES];
-    #endif
+#ifdef Test_Simultaneously_ByFixture
+    [_uiOutlet setHideBigStartBtn:NO];
+#else
+    [_uiOutlet setHideBigStartBtn:YES];
+#endif
     [_uiOutlet setStartBtn1_hidden:!_uiOutlet.hideBigStartBtn];
     [_uiOutlet setStartBtn2_hidden:!_uiOutlet.hideBigStartBtn];
     [_uiOutlet setStartBtn3_hidden:!_uiOutlet.hideBigStartBtn];
     [_uiOutlet setStartBtn4_hidden:!_uiOutlet.hideBigStartBtn];
-    [_uiOutlet setTemp_sn_hidden:IS_Temp_SN_Hidden];
-    [_uiOutlet setSn1_enable:!IS_Temp_SN_Hidden];
-    [_uiOutlet setSn2_enable:!IS_Temp_SN_Hidden];
-    [_uiOutlet setSn3_enable:!IS_Temp_SN_Hidden];
-    [_uiOutlet setSn4_enable:!IS_Temp_SN_Hidden];
+    [_uiOutlet setTemp_sn_hidden:ctrlMode==TempSn?NO:YES];
+    [_uiOutlet setSn1_enable:ctrlMode==ScanSn?YES:NO];
+    [_uiOutlet setSn2_enable:ctrlMode==ScanSn?YES:NO];
+    [_uiOutlet setSn3_enable:ctrlMode==ScanSn?YES:NO];
+    [_uiOutlet setSn4_enable:ctrlMode==ScanSn?YES:NO];
     [_uiOutlet setStartBtn1_enable:YES];
     [_uiOutlet setStartBtn2_enable:YES];
     [_uiOutlet setStartBtn3_enable:YES];
@@ -475,7 +474,7 @@
     
     if ([[textField stringValue] length] == SN_LEN)
     {
-        if (!IS_Temp_SN_Hidden)
+        if (ctrlMode==TempSn)
         {
             [temp_sn becomeFirstResponder];
             return;

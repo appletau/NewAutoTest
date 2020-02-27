@@ -16,6 +16,13 @@
 #import "ThreadSync.h"
 #import "CSV.h"
 
+typedef enum _ControlMode
+{
+    ScanSn,//manual scan sn for 1 & 4 up
+    AutoReadSn,//auto read sn from DUT for 1 & 4 up
+    TempSn//for manual scan sn & 4 independent start button
+}ControlMode;
+
 @interface UI : NSObject <NSTextFieldDelegate>
 {
     NSMutableDictionary *settingDic;
@@ -27,6 +34,7 @@
     ValidatorPW *validatorPW1,*validatorPW2,*validatorPW3,*validatorPW4;
     ThreadSync *threadSync;
     CSV *csv;
+    ControlMode ctrlMode;
     IBOutlet NSWindow *window;
     IBOutlet NSPanel *settingWindow;
     IBOutlet NSTextField *sn1,*sn2,*sn3,*sn4,*temp_sn;

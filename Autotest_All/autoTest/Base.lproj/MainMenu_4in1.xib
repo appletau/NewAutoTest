@@ -731,6 +731,7 @@
                         <buttonCell key="cell" type="push" title="S T A R T" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Qsx-VT-71i">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent"></string>
                         </buttonCell>
                         <connections>
                             <action selector="clickOnBigStartBtn:" target="UMM-hV-uAi" id="QTx-Hp-LZC"/>
@@ -738,11 +739,6 @@
                             <binding destination="UMM-hV-uAi" name="hidden" keyPath="uiOutlet.hideBigStartBtn" previousBinding="ULM-Ig-NQO" id="Fco-ek-Amj"/>
                         </connections>
                     </button>
-                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="qmZ-5a-xlD">
-                        <rect key="frame" x="6" y="681" width="142" height="50"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" image="logo_IAC" id="67i-F7-c3K"/>
-                    </imageView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="BJ5-WQ-EO3">
                         <rect key="frame" x="1003" y="683" width="194" height="48"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
@@ -1376,6 +1372,59 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
                     </scrollView>
+                    <button verticalHuggingPriority="750" misplaced="YES" tag="1" id="O4Q-Fj-5QF">
+                        <rect key="frame" x="0.0" y="703" width="79" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="temp_btn1" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="G3e-ax-3jB">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" size="8" name="HelveticaNeue"/>
+                            <string key="keyEquivalent"></string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="clickOnTempBtn:" target="UMM-hV-uAi" id="A4m-jH-rar"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" misplaced="YES" tag="2" id="hJa-TZ-m3w">
+                        <rect key="frame" x="0.0" y="678" width="79" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="temp_btn2" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dzj-R2-5NV">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" size="8" name="HelveticaNeue"/>
+                            <string key="keyEquivalent"></string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="clickOnTempBtn:" target="UMM-hV-uAi" id="VZ8-iF-RjR"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" misplaced="YES" tag="3" id="ue3-Oh-28i">
+                        <rect key="frame" x="75" y="703" width="79" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="temp_btn3" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="RZ6-7I-PSU">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" size="8" name="HelveticaNeue"/>
+                            <string key="keyEquivalent"></string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="clickOnTempBtn:" target="UMM-hV-uAi" id="wgs-iV-xE4"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" misplaced="YES" tag="4" id="Hkp-uk-9tf">
+                        <rect key="frame" x="75" y="676" width="79" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="temp_btn4" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="A5Y-nK-qxZ">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" size="8" name="HelveticaNeue"/>
+                            <string key="keyEquivalent"></string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="clickOnTempBtn:" target="UMM-hV-uAi" id="syc-0a-yUE"/>
+                        </connections>
+                    </button>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="qmZ-5a-xlD">
+                        <rect key="frame" x="6" y="681" width="142" height="50"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" image="logo_IAC" id="67i-F7-c3K"/>
+                    </imageView>
                 </subviews>
             </view>
             <point key="canvasLocation" x="-5233.5" y="-3969.5"/>
